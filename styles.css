@@ -1,5 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    height: 100vh; /* Set the height of the body to the full viewport height */
+    margin: 0; /* Remove default margin */
+    
+    background: radial-gradient(circle, rgba(59, 68, 95, 0.8) 10%, rgba(3, 3, 3, 0.9) 100%), 
+                linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.6) 50%);
+            
+    background-blend-mode: multiply; /* Blend the two gradients */
+    color: white; /* Set text color for visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Specify a font */
 }
 
 .killer {
@@ -13,14 +25,40 @@ body {
     color: #333;
 }
 
-.killer-box {
-    background: linear-gradient(to right, #000000, #00001a); /* Gradient from black to dark blue */
-    color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 10px;
-    width: 300px; /* Adjust width as needed */
+#killerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Ensures items are evenly distributed */
+    padding: 5px;
 }
+
+.killer-box {
+    background: linear-gradient(to right, #030303, #3b445f); /* Gradient from black to dark blue */
+    color: #fff; /* White text color */
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box; /* Includes padding and border in the width calculation */
+    flex: 1 1 100%; /* Takes full width on smaller screens */
+}
+
+/* Responsive behavior */
+@media (min-width: 600px) and (max-width: 899px) {
+    .killer-box {
+        /* On medium screens, each box tries to fit two per row */
+        flex: 1 1 45%; /* Adjust basis to 45% to fit two items */
+        max-width: 45%; /* Maximum width of 45% of the container */
+    }
+}
+
+@media (min-width: 900px) {
+    .killer-box {
+        /* On larger screens, fit three items per row, each taking 25% width */
+        flex: 1 1 25%; /* Adjust basis to 25% */
+        max-width: 25%; /* Maximum width of 25% of the container */
+    }
+}
+
 
 .killer-name {
     font-size: 1.2em; /* Adjust font size as needed */
@@ -39,4 +77,5 @@ body {
 .killer-stats p {
     margin: 5px 0;
 }
+
 
