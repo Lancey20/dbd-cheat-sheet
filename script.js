@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     killers.forEach(killer => {
         const killerDiv = document.createElement('div');
-        killerDiv.className = 'killer-box'; // Use 'killer-box' for each killer's div
+        killerDiv.className = 'killer-box';
+        killerDiv.id = killer.name.replace(/\s+/g, ''); // Add an ID for navigation, remove spaces
 
         killerDiv.innerHTML = `
             <h2 class="killer-name">${killer.name}</h2>

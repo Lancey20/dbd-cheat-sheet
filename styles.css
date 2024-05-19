@@ -8,12 +8,57 @@ body {
     background-blend-mode: multiply; /* Blend the two gradients */
     color: white; /* Set text color for visibility */
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     font-family: Arial, sans-serif; /* Specify a font */
 }
 
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background-color: #111;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 8px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: 200px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% - 200px); /* Adjust width to account for sidebar */
+}
+
+/* Killer Box Styles */
 .killer {
     margin: 20px;
     padding: 20px;
@@ -33,32 +78,27 @@ body {
 }
 
 .killer-box {
+    display: grid;
+    max-width: 510px;
+    min-width: 470px;
+    border-radius: 5px;
+    grid-template-columns: 245px auto;
+    grid-template-rows: 45px 35px 45px;
     background: linear-gradient(to right, #030303, #3b445f); /* Gradient from black to dark blue */
-    color: #fff; /* White text color */
-    border-radius: 8px;
-    padding: 5px;
-    margin: 10px;
-    box-sizing: border-box; /* Includes padding and border in the width calculation */
-    flex: 1 1 100%; /* Takes full width on smaller screens */
+    color: white;
+    margin: 20px 5px 0px 5px;
+    height: 125px;
+    position: relative;
+    flex: 1;
 }
 
-/* Responsive behavior */
-@media (min-width: 600px) and (max-width: 899px) {
-    .killer-box {
-        /* On medium screens, each box tries to fit two per row */
-        flex: 1 1 45%; /* Adjust basis to 45% to fit two items */
-        max-width: 45%; /* Maximum width of 45% of the container */
-    }
+.killer-box.compact {
+    max-width: 245px !important;
+    min-width: 245px !important;
+    grid-template-columns: 245px !important;
+    grid-template-rows: 45px 35px 45px 125px !important;
+    height: 250px !important;
 }
-
-@media (min-width: 900px) {
-    .killer-box {
-        /* On larger screens, fit three items per row, each taking 25% width */
-        flex: 1 1 25%; /* Adjust basis to 25% */
-        max-width: 25%; /* Maximum width of 25% of the container */
-    }
-}
-
 
 .killer-name {
     font-size: 1.2em; /* Adjust font size as needed */
@@ -78,4 +118,7 @@ body {
     margin: 5px 0;
 }
 
-
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
