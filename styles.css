@@ -1,15 +1,15 @@
+/* General Styles */
 body {
-    height: 100vh; /* Set the height of the body to the full viewport height */
-    margin: 0; /* Remove default margin */
-    
-    background: radial-gradient(circle, rgba(59, 68, 95, 0.8) 10%, rgba(3, 3, 3, 0.9) 100%), 
-                linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.6) 50%);
-            
-    background-blend-mode: multiply; /* Blend the two gradients */
-    color: white; /* Set text color for visibility */
+    height: 100vh;
+    margin: 0;
+    background: 
+        radial-gradient(circle, rgba(59, 68, 95, 0.8) 10%, rgba(3, 3, 3, 0.9) 100%), 
+        linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.6) 50%);
+    background-blend-mode: multiply;
+    color: white;
     display: flex;
     text-align: center;
-    font-family: Arial, sans-serif; /* Specify a font */
+    font-family: Arial, sans-serif;
 }
 
 /* Sidebar Styles */
@@ -52,31 +52,29 @@ body {
     margin-left: 200px;
     padding: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    width: calc(100% - 200px); /* Adjust width to account for sidebar */
+    width: calc(100% - 200px);
 }
 
-/* Killer Box Styles */
-.killer {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+section {
+    margin-bottom: 50px;
 }
 
-.killer h2 {
-    color: #333;
+section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
+/* Killer Container Styles */
 #killerContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Ensures items are evenly distributed */
+    justify-content: space-around;
     padding: 5px;
 }
 
+/* Killer Box Styles */
 .killer-box {
     display: grid;
     max-width: 510px;
@@ -84,7 +82,7 @@ body {
     border-radius: 5px;
     grid-template-columns: 245px auto;
     grid-template-rows: 45px 35px 45px;
-    background: linear-gradient(to right, #030303, #3b445f); /* Gradient from black to dark blue */
+    background: linear-gradient(to right, #030303, #3b445f);
     color: white;
     margin: 20px 5px 0px 5px;
     height: 125px;
@@ -101,7 +99,7 @@ body {
 }
 
 .killer-name {
-    font-size: 1.2em; /* Adjust font size as needed */
+    font-size: 1.2em;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -121,4 +119,29 @@ body {
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Killers Section Styles */
+#killers h2, .killer-name {
+    color: red;
+    font-family: 'Nosifer', cursive;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Loadouts Section Styles */
+#loadouts h2 {
+    color: #00ff00;
+    font-family: 'Bangers', cursive;
+}
+
+/* Maps Section Styles */
+#maps h2 {
+    color: #ffcc00;
+    font-family: 'Permanent Marker', cursive;
+}
+
+/* Guides Section Styles */
+#guides h2 {
+    color: #ff69b4;
+    font-family: 'Rock Salt', cursive;
 }
