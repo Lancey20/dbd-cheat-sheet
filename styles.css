@@ -72,6 +72,7 @@ section h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 5px;
+    margin-left: 10px;
 }
 
 /* Killer Box Styles */
@@ -175,4 +176,22 @@ html {
 #guides h2 {
     color: #ff69b4;
     font-family: 'Rock Salt', cursive;
+}
+
+/* Search Bar Styles */
+#searchBar {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* New alias field styles */
+.killer-details p strong {
+    display: inline-block;
+    width: 80px;
 }

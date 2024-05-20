@@ -29,6 +29,7 @@ const killers = [
     },
     {
         "name": "Shape",
+        "alias": "Michael Myers",
         "TLDR": "Can become invisible and move faster.",
         "strength": "Excellent at ambush attacks.",
         "weakness": "Becomes visible near survivors.",

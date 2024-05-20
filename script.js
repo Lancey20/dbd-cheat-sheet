@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>TLDR:</strong> ${killer.TLDR}</p>
                     <p><strong>Abilities:</strong> ${killer.abilities}</p>
                     <p><strong>Playstyle:</strong> ${killer.playstyle}</p>
+                    <p><strong>Alias:</strong> ${killer.alias}</p>
                 </div>
             </div>
         `;
@@ -23,3 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
         killerContainer.appendChild(killerDiv);
     });
 });
+
+function searchKillers() {
+    let input = document.getElementById('searchBar').value.toLowerCase();
+    let killerBoxes = document.getElementsByClassName('killer-box');
+
+    for (let i = 0; i < killerBoxes.length; i++) {
+        let killerName = killerBoxes[i].getElementsByClassName('killer-name')[0].innerText.toLowerCase();
+        let killerAlias = killerBoxes[i].getElementsByClassName('killer-details')[0].querySelector('p:last-of-type').innerText.toLowerCase();
+        if (killerName.includes(input) || killerAlias.includes(input)) {
+            killerBoxes[i].style.display = "";
+        } else {
+            killerBoxes[i].style.display = "none";
+        }
+    }
+}
