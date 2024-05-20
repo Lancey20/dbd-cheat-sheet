@@ -76,36 +76,67 @@ section h2 {
 
 /* Killer Box Styles */
 .killer-box {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     max-width: 510px;
     min-width: 470px;
     border-radius: 5px;
-    grid-template-columns: 245px auto;
-    grid-template-rows: 45px 35px 45px;
     background: linear-gradient(to right, #030303, #3b445f);
     color: white;
     margin: 20px 5px 0px 5px;
-    height: 125px;
+    padding: 10px;
     position: relative;
     flex: 1;
+    height: 250px; /* Set a fixed height for the killer card */
+    box-sizing: border-box;
 }
 
-.killer-box.compact {
-    max-width: 245px !important;
-    min-width: 245px !important;
-    grid-template-columns: 245px !important;
-    grid-template-rows: 45px 35px 45px 125px !important;
-    height: 250px !important;
+.killer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 95%; /* Ensure the killer-left div takes the full height */
+    box-sizing: border-box; /* Include padding in the height */
+}
+
+.killer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    padding-left: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    height: 100%; /* Take the full height of the killer box */
+}
+
+.killer-details {
+    width: 100%; /* Make sure the text field takes the full width */
+    text-align: left; /* Align text to the left */
+    font-size: 0.9em; /* Adjust font size for better readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Add background color for readability */
+    padding: 10px; /* Add padding for better text spacing */
+    padding-right: 20px; /* Add extra padding to the right to prevent text cutoff */
+    border-radius: 5px; /* Round the corners */
+    color: #fff; /* Ensure text color is white for readability */
+    box-sizing: border-box; /* Include padding in the element's width and height */
 }
 
 .killer-name {
     font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 10px;
+    text-align: center; /* Center text */
+    margin-bottom: 5px;
+    padding-top: 5px; /* Add padding to the top */
 }
 
-.killer-details {
-    font-size: 0.9em;
+.killer-image {
+    width: auto;
+    height: 100%; /* Ensure the image fits within the height of the container */
+    border-radius: 5px;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
 }
 
 .killer-info, .killer-stats {

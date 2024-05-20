@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('killerContainer');
+    const killerContainer = document.getElementById('killerContainer');
 
     killers.forEach(killer => {
         const killerDiv = document.createElement('div');
@@ -7,14 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
         killerDiv.id = killer.name.replace(/\s+/g, ''); // Add an ID for navigation, remove spaces
 
         killerDiv.innerHTML = `
-            <h2 class="killer-name">${killer.name}</h2>
-            <div class="killer-details">
-                <p><strong>Ability:</strong> ${killer.ability}</p>
-                <p><strong>Strength:</strong> ${killer.strength}</p>
-                <p><strong>Weakness:</strong> ${killer.weakness}</p>
+            <div class="killer-left">
+                <h2 class="killer-name">${killer.name}</h2>
+                <img src="${killer.image}" alt="${killer.name}" class="killer-image">
+            </div>
+            <div class="killer-right">
+                <div class="killer-details">
+                    <p><strong>TLDR:</strong> ${killer.TLDR}</p>
+                    <p><strong>Abilities:</strong> ${killer.abilities}</p>
+                    <p><strong>Playstyle:</strong> ${killer.playstyle}</p>
+                </div>
             </div>
         `;
 
-        container.appendChild(killerDiv);
+        killerContainer.appendChild(killerDiv);
     });
 });
